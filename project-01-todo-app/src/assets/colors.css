@@ -1,0 +1,73 @@
+/* Primitive Colors  */
+:root {
+  --clr-red-50: rgba(255, 240, 240, 1);
+  --clr-red-100: rgba(255, 221, 221, 1);
+  --clr-red-200: rgba(255, 193, 193, 1);
+  --clr-red-300: rgba(255, 151, 151, 1);
+  --clr-red-400: rgba(255, 91, 91, 1);
+  --clr-red-500: rgba(255, 40, 40, 1);
+  --clr-red-600: rgba(242, 5, 5, 1);
+  --clr-red-700: rgba(211, 2, 2, 1);
+  --clr-red-800: rgba(174, 6, 6, 1);
+  --clr-red-900: rgba(143, 13, 13, 1);
+  --clr-red-950: rgba(79, 0, 0, 1);
+  --clr-yellow-50: rgba(252, 254, 232, 1);
+  --clr-yellow-100: rgba(249, 255, 194, 1);
+  --clr-yellow-200: rgba(248, 255, 136, 1);
+  --clr-yellow-300: rgba(251, 255, 69, 1);
+  --clr-yellow-400: rgba(253, 247, 18, 1);
+  --clr-yellow-500: rgba(242, 226, 5, 1);
+  --clr-yellow-600: rgba(205, 175, 1, 1);
+  --clr-yellow-700: rgba(163, 126, 5, 1);
+  --clr-yellow-800: rgba(135, 99, 12, 1);
+  --clr-yellow-900: rgba(114, 80, 17, 1);
+  --clr-yellow-950: rgba(67, 43, 5, 1);
+  --clr-neutral-50: rgba(243, 247, 248, 1);
+  --clr-neutral-100: rgba(223, 234, 238, 1);
+  --clr-neutral-200: rgba(195, 216, 222, 1);
+  --clr-neutral-300: rgba(154, 188, 198, 1);
+  --clr-neutral-400: rgba(105, 152, 167, 1);
+  --clr-neutral-500: rgba(78, 124, 140, 1);
+  --clr-neutral-600: rgba(67, 103, 119, 1);
+  --clr-neutral-700: rgba(59, 85, 99, 1);
+  --clr-neutral-800: rgba(55, 74, 83, 1);
+  --clr-neutral-900: rgba(49, 63, 72, 1);
+  --clr-neutral-950: rgba(8, 11, 13, 1);
+}
+
+/* Token Colors  */
+:root {
+  --clr-text-primary: var(--clr-neutral-950);
+  --clr-text-invert: var(--clr-neutral-50);
+  --clr-text-secondary: var(--clr-neutral-700);
+
+  --clr-background-light: var(--clr-neutral-50);
+  --clr-background-dark: var(--clr-neutral-950);
+
+  --clr-primary: var(--clr-red-600);
+  --clr-secondary: var(--clr-yellow-500);
+
+  --clr-border-primary: var(--clr-neutral-900);
+  --clr-border-secondary: var(--clr-neutral-200);
+
+  --clr-horizontal-gradient: linear-gradient(
+    270deg,
+    var(--clr-secondary) 0%,
+    var(--clr-primary,) 100%
+  );
+  --clr-horizontal-gradient-invert: linear-gradient(
+    270deg,
+    var(--clr-primary) 0%,
+    var(--clr-secondary,) 100%
+  );
+  --clr-vertical-gradient: linear-gradient(
+    180deg,
+    var(--clr-primary) 0%,
+    var(--clr-secondary,) 100%
+  );
+  --clr-vertical-gradient-invert: linear-gradient(
+    180deg,
+    var(--clr-secondary) 0%,
+    var(--clr-primary) 100%
+  );
+}

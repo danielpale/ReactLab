@@ -1,0 +1,18 @@
+.the-header {
+  height: 56px;
+  background-color: var(--clr-background-dark);
+  color: var(--clr-text-invert);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.the-header h6 {
+  font-weight: 700;
+}
+
+.the-header img {
+  height: 36px;
+  width: 36px;
+}
