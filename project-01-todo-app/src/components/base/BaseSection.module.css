@@ -1,0 +1,21 @@
+.base-section {
+  position: relative;
+  padding: 16px;
+  width: 100%;
+  max-width: var(--base-max-width);
+  margin: 0 auto;
+}
+
+.base-section--fluid {
+  max-width: 100%;
+}
+
+.base-section--full-height {
+  height: 100%;
+}
+
+@media (width < 600px) {
+  .base-section {
+    padding: 16px 8px;
+  }
+}

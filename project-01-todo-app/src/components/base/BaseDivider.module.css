@@ -1,0 +1,11 @@
+.base-divider {
+  border-width: 2px;
+  border-color: var(--clr-border-secondary);
+  border-style: dashed;
+}
+
+@media (width < 960px) {
+  .base-divider {
+    border-width: 1px;
+  }
+}
