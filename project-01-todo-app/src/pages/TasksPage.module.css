@@ -1,0 +1,10 @@
+.task-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  text-transform: uppercase;
+  color: var(--clr-text-secondary);
+}

@@ -9,6 +9,15 @@
   font-weight: normal;
 }
 
+:root {
+  --base-max-width: 1920px;
+}
+
 body {
   min-height: 100vh;
+  background-color: var(--clr-background-light);
+}
+
+html {
+  overflow-y: scroll;
 }
