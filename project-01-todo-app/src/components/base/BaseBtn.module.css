@@ -1,0 +1,17 @@
+.base-btn {
+  all: unset;
+  height: 36px;
+  padding-inline: 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.base-btn--primary {
+  background-color: var(--clr-primary);
+  color: var(--clr-text-invert);
+}
+
+.base-btn--secondary {
+  background-color: var(--clr-background-dark);
+  color: var(--clr-text-invert);
+}
