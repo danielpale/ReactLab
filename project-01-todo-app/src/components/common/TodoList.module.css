@@ -23,3 +23,29 @@
   align-items: center;
   gap: 8px;
 }
+
+.todo-list__input {
+  all: unset;
+  display: block;
+  padding: 8px 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--clr-border-secondary);
+  font-size: var(--fs-400);
+  color: var(--clr-text-primary);
+  flex-grow: 1;
+}
+
+.todo-list__input:active,
+.todo-list__input:focus,
+.todo-list__input:hover {
+  border-color: var(--clr-border-primary);
+}
+
+.todo-list__input:focus {
+  outline: 1px solid var(--clr-border-primary);
+}
+
+.todo-list__input::placeholder {
+  color: var(--clr-text-secondary);
+}

@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import classes from "./TodoList.module.css";
 import BaseBtn from "../base/BaseBtn";
 import TodoListItem from "./TodoListItem";
 
-export default function TodoList({ tasks = [], hideAdd = false }) {
+export default function TodoList({ tasks = [], hideAdd = false, onAddTask }) {
   const [creating, setCreating] = useState(false);
+  const inputRef = useRef();
 
-  function handleAddTask() {
+  useEffect(() => {
+    if (creating) {
+      inputRef.current.focus();
+    }
+  }, [creating]);
+
+  function handleCreateTask() {
     setCreating(true);
   }
-
   function handleCancelCreateTask() {
     setCreating(false);
+  }
+  function handleAddTask() {
+    const title = inputRef.current.value;
+    if (title === "") return;
+    onAddTask(title);
+    handleCancelCreateTask();
   }
 
   return (
@@ -24,17 +36,21 @@ export default function TodoList({ tasks = [], hideAdd = false }) {
           {!creating ? (
             <div
               className={classes["todo-list-creation-item"]}
-              onClick={handleAddTask}
+              onClick={handleCreateTask}
             >
               <p> Añadir tarea </p>
             </div>
           ) : (
             <div className={classes["todo-list__form"]}>
-              <input placeholder="Escribe la tarea aquí" />
+              <input
+                className={classes["todo-list__input"]}
+                placeholder="Escribe la tarea aquí"
+                ref={inputRef}
+              />
               <BaseBtn type="secondary" onClick={handleCancelCreateTask}>
                 Cancelar
               </BaseBtn>
-              <BaseBtn>Añadir</BaseBtn>
+              <BaseBtn onClick={handleAddTask}>Añadir</BaseBtn>
             </div>
           )}
         </>
