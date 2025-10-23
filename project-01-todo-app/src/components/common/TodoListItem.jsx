@@ -13,6 +13,7 @@ export default function TodoListItem({
   onUpdate,
 }) {
   const [editing, setEditing] = useState(false);
+  const [check, setCheck] = useState(completed);
   const inputRef = useRef();
 
   useEffect(() => {
@@ -23,9 +24,10 @@ export default function TodoListItem({
 
   function handleCompleteChanged(event) {
     const emit = event.target.checked ? onComplete : onDecomplete;
-    // setTimeout(() => {
-    emit(id);
-    // }, 300);
+    setTimeout(() => {
+      emit(id);
+    }, 300);
+    setCheck(event.target.checked);
   }
   function handleEdit() {
     if (completed) return;
@@ -48,8 +50,9 @@ export default function TodoListItem({
       }`}
     >
       <input
+        className={classes["todo-list-item__checkbox"]}
         type="checkbox"
-        checked={completed}
+        checked={check}
         onChange={handleCompleteChanged}
       />
       {!editing && (
