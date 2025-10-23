@@ -50,6 +50,10 @@
   background-color: var(--clr-border-secondary);
 }
 
+.todo-list-item--completed .todo-list-item__delete-btn::before {
+  background-color: var(--clr-border-secondary);
+}
+
 .todo-list-item__checkbox {
   -webkit-appearance: none;
   appearance: none;
@@ -81,4 +85,35 @@
 .todo-list-item__checkbox:checked {
   background-color: var(--clr-primary);
   border-color: transparent;
+}
+
+.todo-list-item__delete-btn {
+  height: 32px;
+  width: 32px;
+  border: none;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.todo-list-item__delete-btn::before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: var(--clr-primary);
+  clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    30% 50%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    80% 100%,
+    100% 80%,
+    70% 50%,
+    100% 20%,
+    80% 0%,
+    50% 30%
+  );
 }

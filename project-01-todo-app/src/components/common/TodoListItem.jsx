@@ -68,7 +68,10 @@ export default function TodoListItem({
           onBlur={handleUpdate}
         />
       )}
-      <button onClick={() => onDelete(id)}>Eliminar</button>
+      <button
+        className={classes["todo-list-item__delete-btn"]}
+        onClick={() => onDelete(id)}
+      />
     </div>
   );
 }
