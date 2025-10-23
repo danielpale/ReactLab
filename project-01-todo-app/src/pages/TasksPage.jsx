@@ -14,13 +14,46 @@ export default function TasksPage() {
 
   function onAddTask(title) {
     const newTask = {
-      id: `${new Date()}`,
+      id: `${Date.now()}`,
       title: title,
       creationDate: new Date(),
       completationDate: null,
       completed: false,
     };
-    setTasks((prev) => [...prev, newTask]);
+    setTasks([...tasks, newTask]);
+  }
+  function onDeleteTask(id) {
+    setTasks(tasks.filter((task) => task.id !== id));
+  }
+  function onCompleteTask(id) {
+    const nextTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, completed: true };
+      } else {
+        return task;
+      }
+    });
+    setTasks(nextTasks);
+  }
+  function onDecompleteTask(id) {
+    const nextTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, completed: false };
+      } else {
+        return task;
+      }
+    });
+    setTasks(nextTasks);
+  }
+  function onUpdateTask(id, newTitle) {
+    const nextTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, title: newTitle };
+      } else {
+        return task;
+      }
+    });
+    setTasks(nextTasks);
   }
 
   return (
@@ -33,7 +66,13 @@ export default function TasksPage() {
         <h6 className={`caption ff-text ${classes.title}`}>
           [Tareas Pendientes]
         </h6>
-        <TodoList tasks={incompleteTasks} onAddTask={onAddTask} />
+        <TodoList
+          tasks={incompleteTasks}
+          onAddTask={onAddTask}
+          onDeleteTask={onDeleteTask}
+          onCompleteTask={onCompleteTask}
+          onUpdateTask={onUpdateTask}
+        />
       </BaseSection>
       <BaseDivider />
       <BaseSection
@@ -43,7 +82,12 @@ export default function TasksPage() {
         <h6 className={`caption ff-text ${classes.title}`}>
           [Tareas Terminadas]
         </h6>
-        <TodoList hideAdd tasks={completedTasks} />
+        <TodoList
+          hideAdd
+          tasks={completedTasks}
+          onDeleteTask={onDeleteTask}
+          onDecompleteTask={onDecompleteTask}
+        />
       </BaseSection>
     </div>
     // </TasksContext>

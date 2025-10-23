@@ -3,7 +3,15 @@ import classes from "./TodoList.module.css";
 import BaseBtn from "../base/BaseBtn";
 import TodoListItem from "./TodoListItem";
 
-export default function TodoList({ tasks = [], hideAdd = false, onAddTask }) {
+export default function TodoList({
+  tasks = [],
+  hideAdd = false,
+  onAddTask,
+  onDeleteTask,
+  onCompleteTask,
+  onDecompleteTask,
+  onUpdateTask,
+}) {
   const [creating, setCreating] = useState(false);
   const inputRef = useRef();
 
@@ -29,7 +37,14 @@ export default function TodoList({ tasks = [], hideAdd = false, onAddTask }) {
   return (
     <div className={classes["todo-list"]}>
       {tasks.map((task) => (
-        <TodoListItem key={task.id} {...task} />
+        <TodoListItem
+          key={task.id}
+          {...task}
+          onDelete={onDeleteTask}
+          onComplete={onCompleteTask}
+          onDecomplete={onDecompleteTask}
+          onUpdate={onUpdateTask}
+        />
       ))}
       {!hideAdd && (
         <>

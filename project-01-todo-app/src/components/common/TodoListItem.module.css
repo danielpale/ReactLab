@@ -15,7 +15,6 @@
   display: flex;
   align-items: center;
   flex-grow: 1;
-  cursor: text;
   position: relative;
   padding-left: 4px;
 }
@@ -23,16 +22,26 @@
 .todo-list-item__title:hover:not(
     .todo-list-item--completed .todo-list-item__title
   ) {
+  cursor: text;
   background: rgba(242, 5, 5, 0.04);
 }
 
-.list-item--completed {
+.todo-list-item--completed {
   border-color: var(--clr-border-secondary);
 }
 
-.list-item--completed .list-item__title {
+.todo-list-item--completed .todo-list-item__title {
   color: var(--clr-text-secondary) !important;
   text-decoration-line: line-through;
   text-decoration-color: var(--clr-border-primary);
   cursor: default;
+}
+
+.todo-list-item__input {
+  all: unset;
+  display: block;
+  padding: 8px 4px;
+  font-size: var(--fs-400);
+  color: var(--clr-text-primary);
+  flex-grow: 1;
 }
